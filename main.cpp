@@ -85,7 +85,7 @@ int main(int argc, const char *argv[]) {
 
     // check mistake
     int mistake = 0; // mistake counter in character mistakes
-    const int threashold_cc = 3; // if there are max 3 words (tokens) less from the input to original exerpt, it is tolerated as completed.
+    const int threashold_cc = 10; // if there are max 3 words (tokens) less from the input to original exerpt, it is tolerated as completed.
 
     if (input_words.size() >= (words.size() - threashold_cc)) {
         for (int i = 0; i < words.size(); i++) {
