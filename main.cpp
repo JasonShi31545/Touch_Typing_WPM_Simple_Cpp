@@ -3,13 +3,9 @@
 using namespace std;
 
 int main(int argc, const char *argv[]) {
-
     
     string ext = ""; // the main text
-
-
-
-
+    
     srand(time(0));
     const int file_no = rand() % 5 + 0; // random number for exerpt file selection
 
@@ -23,11 +19,8 @@ int main(int argc, const char *argv[]) {
         ext += temp;
     } // initialize ext with the content of file.
 
-
-
     vector<string> words; // all the words (tokens) in the file
     string temp_word = ""; // temporary for word storage from characters
-
 
     int word_count = 0; // word count for calculating wpm
     for (auto c : ext) { // initialization of words
@@ -41,12 +34,9 @@ int main(int argc, const char *argv[]) {
     }
     word_count++;
 
-
-
     cout << "Please type the following passage: " << endl;
     cout << ext << endl;
     cout << endl;
-
 
     const int in_threashold = 7; // input padding for _input (which is a fixed sized char array
     char _input[ext.size() + in_threashold];
@@ -54,20 +44,14 @@ int main(int argc, const char *argv[]) {
     // start timer
     chrono::time_point<chrono::system_clock> start, end;
     start = chrono::system_clock::now();
-
     
     // GET CONTENT
     cin.getline(_input, ext.size() + in_threashold);
     
-
     //end timer
     end = chrono::system_clock::now();
 
     chrono::duration<double> es = end - start;
-
-
-
-
 
     string input(_input); // convert _input (fixed sized char array) to string in c++
     // es.count();
@@ -101,9 +85,6 @@ int main(int argc, const char *argv[]) {
         return -1;
     }
    
-
-
-
     // calculate score.
     double sec_f_m = (1.3/4.5) * mistake;
     chrono::duration<double> mt(mistake);
